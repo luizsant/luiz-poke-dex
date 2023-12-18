@@ -1,0 +1,45 @@
+/* footer.component.css */
+
+.app-footer {
+  padding: 20px;
+  background-color: #f7f7f7; /* Cor de fundo do rodapé */
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve na parte superior */
+}
+
+.app-footer p,
+.app-footer h3 {
+  margin: 0; /* Remove margens padrão */
+  color: #333; /* Cor do texto */
+  font-size: 0.9em;
+}
+
+.app-footer a {
+  color: #4fc1a6; /* Cor de links para combinar com o cabeçalho */
+  text-decoration: none; /* Remove sublinhado de links */
+  margin: 0 5px;
+}
+
+.app-footer a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.app-footer .social-icons {
+  margin-top: 10px;
+  list-style: none; /* Remove estilos de lista */
+  padding: 0; /* Remove padding padrão */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-footer .social-icons li {
+  margin: 0 5px;
+}
+
+.app-footer .social-icons li a {
+  display: inline-block;
+  font-size: 1.5em; /* Tamanho dos ícones sociais */
+}
+
+/* Adicione estilos específicos para os ícones se estiver usando uma biblioteca de ícones */

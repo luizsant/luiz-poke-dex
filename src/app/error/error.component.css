@@ -1,0 +1,30 @@
+/* error.component.css */
+
+.error-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.error-container h1 {
+  color: #d9534f; /* vermelho */
+  margin: 20px 0;
+}
+
+.error-container p {
+  color: #5a5a5a; /* cinza escuro */
+  margin-bottom: 30px;
+}
+
+.error-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5cb85c; /* verde */
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.error-container button:hover {
+  background-color: #4cae4c; /* um verde um pouco mais escuro */
+}

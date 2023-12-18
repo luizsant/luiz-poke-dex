@@ -1,0 +1,46 @@
+<!-- pokemon-card.component.html -->
+<div
+  class="pokemon-card"
+  [ngStyle]="{ 'background-color': getBackgroundColor(pokemon?.primaryType) }"
+  *ngIf="pokemon"
+>
+  <img [src]="pokemon?.photo" alt="{{ pokemon?.name }}" />
+  <h3>#{{ pokemon?.number }}. {{ pokemon?.name }}</h3>
+  <h2 class="pokemon-type">{{ pokemon.primaryType }}</h2>
+  <h2 class="pokemon-type" *ngIf="pokemon?.secondaryType">
+    {{ pokemon.secondaryType }}
+  </h2>
+
+  <section>
+    <button (click)="loadPokemonDetails()">Detalhes</button>
+  </section>
+
+  <div class="pokemon-details" *ngIf="showDetails">
+    <div class="pokemon-details-header">
+      <span class="pokemon-name">{{ detailedPokemon.name }}</span>
+      <span class="pokemon-number">#{{ detailedPokemon.number }}</span>
+      <button class="close-button" (click)="closeDetails()">×</button>
+    </div>
+
+    <img
+      class="pokemon-image"
+      [src]="detailedPokemon.photo"
+      alt="{{ detailedPokemon.name }}"
+    />
+
+    <div *ngFor="let type of detailedPokemon.types" class="pokemon-type">
+      {{ type | uppercase }}
+    </div>
+
+    <div class="stats-container">
+      <div *ngFor="let stat of detailedPokemon.stats" class="stat-item">
+        <span class="stat-name">{{ stat.statName | uppercase }}</span>
+        <div class="stat-bar">
+          <div class="stat-bar-fill" [style.width]="stat.baseStat + '%'"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adicione aqui as seções 'Evolução' e 'Moves' -->
+  </div>
+</div>

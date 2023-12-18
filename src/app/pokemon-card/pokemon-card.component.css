@@ -1,0 +1,229 @@
+/* Estilos para cada card individual */
+.pokemon-card {
+  width: calc(
+    33.33% - 20px
+  ); /* Define a largura do card (3 colunas) com espaçamento */
+  height: 300px; /* Define uma altura fixa para os cards */
+  padding-top: 20px;
+  margin-right: 20px; /* Espaço entre os cards na horizontal */
+  margin-bottom: 20px; /* Espaço entre os cards na vertical */
+  border: 1px solid #ccc; /* Adicione uma borda ao redor do card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra ao card */
+  text-align: center; /* Centralize o conteúdo do card */
+  background-color: #f5f5f5; /* Cor de fundo do card */
+  box-sizing: border-box; /* Inclua a largura da borda no cálculo da largura total */
+  border-radius: 10px;
+  display: inline-block; /* Para evitar que os cards quebrem para a próxima linha */
+  vertical-align: top;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.897); /* Branco com opacidade de 70% */
+}
+
+/* Estilos para o último card de cada linha para remover a margem direita */
+.pokemon-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Estilos para as imagens dos Pokémon */
+.pokemon-card img {
+  width: 100px; /* Defina um tamanho fixo para as imagens */
+  height: 100px; /* Defina uma altura fixa para as imagens */
+}
+/* pokemon-card.component.css */
+.pokemon-type {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  color: rgb(255, 255, 255, 0.897);
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: #ccc;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  border: 1px solid #444cc7;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.897);
+  font-weight: bold;
+  background-color: blueviolet;
+
+  cursor: pointer;
+}
+/* pokemon-card.component.css */
+.pokemon-details {
+  position: fixed; /* Posicionamento fixo na tela */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Ajuste a largura conforme necessário */
+  max-width: 400px; /* Largura máxima do banner */
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100; /* Certifique-se de que está sobre outros elementos */
+}
+
+/* pokemon-card.component.css */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+/* pokemon-card.component.css */
+
+/* Estilo para o popup de detalhes */
+/* pokemon-card.component.css */
+
+.pokemon-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Ajuste a largura conforme necessário */
+  max-width: 400px; /* Ajuste a largura máxima conforme necessário */
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.pokemon-details-header {
+  background: #f7f7f7; /* Cor de fundo do cabeçalho do popup */
+  padding: 10px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokemon-name {
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+}
+
+.pokemon-number {
+  font-size: 1em;
+  color: #666;
+}
+
+.pokemon-type {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 15px;
+  margin: 5px 0;
+  font-size: 0.8em;
+  color: white;
+  background-color: #4fc1a6; /* Exemplo de cor para o tipo */
+}
+
+.pokemon-image {
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #888;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-name {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.stat-bar {
+  height: 8px;
+  background-color: #ddd;
+  flex-grow: 1;
+  margin-left: 10px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.stat-bar-fill {
+  background-color: #4fc1a6;
+  width: 50%; /* Ajuste a porcentagem baseado no valor da estatística */
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+}
+
+/* Adicione estilos para outras seções como 'Evolução' e 'Moves' conforme necessário */
+
+/* Estilo para o botão de fechar */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Estilos adicionais para organizar o conteúdo do popup */
+.pokemon-details h3 {
+  margin-top: 0;
+}
+
+.pokemon-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokemon-details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .pokemon-card {
+    width: calc(
+      50% - 20px
+    ); /* Define a largura do card (2 colunas) com espaçamento */
+  }
+}
+
+/* Media query para um card por linha em telas ainda menores */
+@media screen and (max-width: 480px) {
+  .pokemon-card {
+    width: 100%; /* Define a largura do card (1 coluna) ocupando toda a largura da tela */
+    margin-right: 0; /* Remova a margem direita para cards de uma coluna */
+  }
+}

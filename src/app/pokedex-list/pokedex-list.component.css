@@ -1,0 +1,21 @@
+.pokedex-list {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.pokedex-list h2 {
+  margin-top: 0;
+}
+
+.pokedex-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pokedex-list li {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}

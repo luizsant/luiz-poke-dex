@@ -1,0 +1,29 @@
+.app-header {
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  align-items: center; /* Alinha verticalmente ao centro */
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #753bb8; /* Cor de fundo do cabeçalho */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  /* Se você deseja que o cabeçalho fique fixo no topo da página, descomente a linha abaixo */
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  /* z-index: 1000; */
+}
+
+.app-header h1 {
+  margin: 0; /* Remove a margem padrão */
+}
+
+.app-header h1 a {
+  display: block; /* Faz o link preencher o conteúdo da tag <h1> */
+  width: 100%; /* Define a largura para 100% do contêiner do link */
+  text-align: center; /* Alinha o texto (e qualquer conteúdo inline) ao centro */
+}
+
+.app-header h1 a img {
+  max-width: 150px; /* Limita a largura máxima do logo */
+  height: auto; /* Mantém a proporção da imagem */
+}
