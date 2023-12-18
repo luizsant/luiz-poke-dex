@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, BehaviorSubject, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class PokemonService {
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private activeModalId = new BehaviorSubject<number | null>(null);
 
   constructor(private http: HttpClient) {}
 
@@ -18,18 +19,18 @@ export class PokemonService {
         forkJoin(pokemons.map((pokemon) => this.http.get(pokemon.url)))
       ),
       map((pokemonDetails: any[]) => {
-        const pokemons = pokemonDetails.map((detail) =>
-          this.convertToPokemon(detail)
-        );
-        return pokemons;
+        return pokemonDetails.map((detail) => this.convertToPokemon(detail));
       })
     );
   }
+
   getPokemonDetails(pokemonId: number): Observable<any> {
+    this.activeModalId.next(pokemonId);
     return this.http
       .get(`${this.apiUrl}/${pokemonId}`)
       .pipe(map((pokeDetail) => this.convertToPokemon(pokeDetail)));
   }
+
   private convertToPokemon(pokeDetail: any): any {
     const typesArray = pokeDetail.types.map((t: any) => t.type.name);
     const primaryType = typesArray[0];
@@ -50,8 +51,16 @@ export class PokemonService {
       primaryType: primaryType,
       secondaryType: secondaryType,
       photo: pokeDetail.sprites.other.dream_world.front_default,
-      abilities: abilities, // Adicionando habilidades
-      stats: stats, // Adicionando status
+      abilities: abilities,
+      stats: stats,
     };
+  }
+
+  closeModal(): void {
+    this.activeModalId.next(null);
+  }
+
+  getActiveModalId(): Observable<number | null> {
+    return this.activeModalId.asObservable();
   }
 }

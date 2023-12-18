@@ -1,19 +1,40 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PokemonService } from '../pokemon.service'; // Certifique-se de que o caminho está correto
+import {
+  Component,
+  Input,
+  OnInit,
+  HostListener,
+  OnDestroy,
+} from '@angular/core';
+import { PokemonService } from '../pokemon.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css'],
 })
-export class PokemonCardComponent implements OnInit {
-  @Input() pokemon: any; // Substitua 'any' pelo modelo de dados do Pokémon, se houver
-  showDetails: boolean = false; // Para controlar a visibilidade do banner de detalhes
-  detailedPokemon: any; // Armazena os detalhes do Pokémon
+export class PokemonCardComponent implements OnInit, OnDestroy {
+  @Input() pokemon: any;
+  showDetails: boolean = false;
+  detailedPokemon: any;
+  private modalSubscription?: Subscription; // Fazendo modalSubscription opcional
 
-  constructor(private pokemonService: PokemonService) {} // Injeção do serviço
+  constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.modalSubscription = this.pokemonService
+      .getActiveModalId()
+      .subscribe((activeModalId) => {
+        this.showDetails = activeModalId === this.pokemon.number;
+      });
+  }
+
+  ngOnDestroy(): void {
+    if (this.modalSubscription) {
+      // Verificando se modalSubscription está definido
+      this.modalSubscription.unsubscribe();
+    }
+  }
 
   getBackgroundColor(primaryType: string): string {
     switch (primaryType) {
@@ -48,10 +69,8 @@ export class PokemonCardComponent implements OnInit {
     }
   }
   loadPokemonDetails() {
-    console.log('ID do Pokémon:', this.pokemon.number);
     this.pokemonService.getPokemonDetails(this.pokemon.number).subscribe(
       (data) => {
-        console.log('Detalhes do Pokémon:', data);
         this.detailedPokemon = data;
         this.showDetails = true;
       },
@@ -62,6 +81,13 @@ export class PokemonCardComponent implements OnInit {
   }
 
   closeDetails() {
-    this.showDetails = false;
+    this.pokemonService.closeModal();
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  handleKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.closeDetails();
+    }
   }
 }
