@@ -1,27 +1,27 @@
-# PokeAngular
+# Projeto Pokédex Angular - Preparação para Aprendizado Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
 
-## Development server
+## Sobre o Projeto
+Este projeto, originalmente concebido para ser realizado em JavaScript, HTML e CSS como parte de um desafio da Digital Innovation One (DIO) no Bootcamp Desenvolvimento Frontend com Angular, foi adaptado para usar Angular em um esforço de aprofundar e aplicar o conhecimento adquirido nas aulas de Angular. A ideia era transformar o desafio inicial de criar uma aplicação Pokédex em uma oportunidade de explorar as capacidades avançadas do Angular, um framework moderno e poderoso para desenvolvimento web.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
+- **Angular:** Escolhido pelo seu poderoso ecossistema e arquitetura baseada em componentes, o Angular foi utilizado para estruturar a aplicação de forma modular e eficiente.
+- **HTML:** Utilizado para estruturar o conteúdo da aplicação.
+- **CSS:** Aplicado para estilizar e apresentar o conteúdo de forma atraente e responsiva.
+- **TypeScript:** Como linguagem principal do Angular, foi usada para adicionar tipagem forte e recursos modernos de programação.
 
-## Code scaffolding
+## Funcionalidades Principais
+- **Listagem de Pokémon:** A aplicação apresenta uma lista interativa de Pokémon, permitindo aos usuários explorar uma variedade de espécies.
+- **Detalhes do Pokémon:** Ao selecionar um Pokémon, os usuários podem visualizar informações detalhadas, incluindo habilidades, tipos e estatísticas.
+- **Integração com PokéAPI:** A aplicação consome dados da PokéAPI para garantir informações atualizadas e completas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Desafios e Soluções
+- **Gerenciamento de Estado dos Modais:** Um dos principais desafios foi gerenciar a exibição dos modais de detalhes dos Pokémon. Implementamos um sistema centralizado de controle utilizando `BehaviorSubject` do Angular, permitindo que apenas um modal seja exibido por vez e adicionando suporte para fechá-los com a tecla "Esc".
 
-## Build
+## Conclusão
+Este projeto não só foi um desafio enriquecedor proposto pela DIO, mas também uma oportunidade valiosa para aplicar e expandir nossos conhecimentos em Angular. Ele demonstra a flexibilidade do Angular em adaptar projetos existentes e a eficácia de suas ferramentas e metodologias para criar aplicações web modernas e funcionais.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este README oferece uma visão clara do objetivo e da abordagem do seu projeto, destacando o uso do Angular e como ele foi utilizado para elevar o desafio inicial da DIO.
