@@ -22,6 +22,4 @@ Este projeto, originalmente concebido para ser realizado em JavaScript, HTML e C
 ## Conclusão
 Este projeto não só foi um desafio enriquecedor proposto pela DIO, mas também uma oportunidade valiosa para aplicar e expandir nossos conhecimentos em Angular. Ele demonstra a flexibilidade do Angular em adaptar projetos existentes e a eficácia de suas ferramentas e metodologias para criar aplicações web modernas e funcionais.
 
----
 
-Este README oferece uma visão clara do objetivo e da abordagem do seu projeto, destacando o uso do Angular e como ele foi utilizado para elevar o desafio inicial da DIO.
